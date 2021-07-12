@@ -9,7 +9,7 @@ figure_name = 'square';
 figure_name = 'Ideal_pully';
 figure_name = 'line';
 
-[set_x, set_y, len, I] = convex_hull_set(['pics/',figure_name,'.bmp']);
+[set_x, set_y, len, I] = convex_hull_set(['pulleys/',figure_name,'.bmp']);
 
 Nw      = 1000; % Please be sure floor(Nw/200) = 0.
 box_dim = 10; % mm
@@ -86,9 +86,6 @@ for i = 1:length(set_x)-1
 end
 
 %% Gear - System initial interaction:
-
-% figure;
-% hold on;
 
 for i = 1:length(set_x)-1
     

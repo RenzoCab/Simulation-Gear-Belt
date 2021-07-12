@@ -6,13 +6,13 @@ function [] = close_loop(pulley, model_3D, num_iter, substitution)
         mkdir([pwd dir_L]);
     end
 
-    [~, ~, ~, input] = convex_hull_set(['pics/',model_3D,'.bmp']);
+    [~, ~, ~, input] = convex_hull_set(['pulleys/',model_3D,'.bmp']);
     % Initial 3D model.
 
-    [~, ~, ~, initial_pully] = convex_hull_set(['pics/',pulley,'.bmp']);
+    [~, ~, ~, initial_pully] = convex_hull_set(['pulleys/',pulley,'.bmp']);
     % Initial 3D model.
 
-    deriv_norm = create_dudw(['pics/',pulley,'.bmp'], 1000, 6);
+    deriv_norm = create_dudw(['pulleys/',pulley,'.bmp'], 1000, 6);
     % Initial pulley du/dw.
 
     % We simulate the printer and create the output:
@@ -43,13 +43,13 @@ function [] = close_loop(pulley, model_3D, num_iter, substitution)
     output_figure_url = [pwd dir_L,'/iteration_1.bmp'];
     imwrite(not(logical(output)),output_figure_url);
 
-    iteration_figure = ['pics/From_',pulley,'_to_',model_3D,'.bmp'];
+    iteration_figure = ['pulleys/From_',pulley,'_to_',model_3D,'.bmp'];
     imwrite(not(logical(output)),iteration_figure);
 
     for i = 2:num_iter
 
         if substitution == false
-            [~, ~, ~, input] = convex_hull_set(['pics/',model_3D,'.bmp']);
+            [~, ~, ~, input] = convex_hull_set(['pulleys/',model_3D,'.bmp']);
         elseif substitution == true
             [~, ~, ~, input] = convex_hull_set(iteration_figure);
         end
