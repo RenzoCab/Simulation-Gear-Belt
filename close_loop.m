@@ -1,6 +1,6 @@
 function [] = close_loop(pulley, model_3D, num_iter, substitution)
 
-    dir_L = ['/runs/figs/iterations/From_',pulley,'_to_',model_3D];
+    dir_L = ['/figs/iterations/From_',pulley,'_to_',model_3D];
 
     if 0 == exist([pwd dir_L],'dir')
         mkdir([pwd dir_L]);

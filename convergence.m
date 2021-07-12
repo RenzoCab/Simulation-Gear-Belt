@@ -1,6 +1,6 @@
 function [] = convergence(pulley, model_3D, num_iter)
 
-    dir_L    = [pwd '/runs/figs/iterations/From_',pulley,'_to_',model_3D];
+    dir_L    = [pwd '/figs/iterations/From_',pulley,'_to_',model_3D];
 
     [~, ~, ~, model_3d] = convex_hull_set([dir_L,'/initial_model_3D.bmp']);
     iterations = {};

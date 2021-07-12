@@ -241,7 +241,7 @@ grid minor;
 xlim([min(w-initial_w) max(w-initial_w)]);
 xlabel('Radians');
 title('Normalized analytic derivative du/dw');
-dir_L    = [pwd '/runs/figs'];
+dir_L    = [pwd '/figs'];
 
 if 0 == exist([dir_L,'/dudw/',figure_name],'dir')
 	mkdir([dir_L,'/dudw/',figure_name]);
