@@ -7,7 +7,7 @@ figure_name = 'heart';
 figure_name = 'circleShifted';
 figure_name = 'square';
 figure_name = 'Ideal_pully';
-% figure_name = 'line';
+figure_name = 'line';
 
 [set_x, set_y, len, I] = convex_hull_set(['pics/',figure_name,'.bmp']);
 
@@ -106,15 +106,6 @@ for i = 1:length(set_x)-1
     if i == 2
         angle_start_t2_r1 = pi - alpha - m;
     end
-    
-% Testing:
-%     r2                = gear.tri(i).r2;
-%     gamma             = gear.tri(i).gamma;
-%     [x_try_1,y_try_1] = pol2cart(pi-alpha-m,r1);
-%     [x_try_2,y_try_2] = pol2cart(pi-alpha-m-gamma,r2);
-%     set_x_t           = [0; x_try_1; x_try_2; 0];
-%     set_y_t           = [0; y_try_1; y_try_2; 0];
-%     plot(set_x_t,set_y_t);
     
 end
 
@@ -223,11 +214,6 @@ for i = 1:length(w)
     deriv_fd_norm(i) = deriv_fd(i)/dudw_norm;
     deriv_norm(i)    = deriv(i)/dudw_norm;
     
-    % For debugging:
-    save_m(i)     = m;
-    save_stage(i) = stage;
-    save_tri(i) = tr_use;
-    
 end
 
 deriv_fd_norm = deriv_fd_norm(2:end) - deriv_fd_norm(1:end-1);
@@ -238,10 +224,6 @@ for i = 0:199
     step_mean(i+1) = mean(deriv(1+divs*i:divs+divs*i))/dudw_norm;
     
 end
-
-% h = figure;
-% plot(deriv, 'LineWidth', 2); grid minor;
-% title('deriv');
 
 h1 = figure(3);
 plot(linspace(0,2*pi,200), step_mean, 'LineWidth', 2); grid minor;
@@ -254,35 +236,11 @@ xlim([0 2*pi]);
 h2 = figure(4);
 plot(w-initial_w,deriv_norm, 'LineWidth', 2);
 hold on;
-% plot(w(1:end-1),deriv_fd_norm, 'LineWidth', 2);
 plot(w-initial_w,mean(deriv/dudw_norm)*ones(1,length(deriv)), 'LineWidth', 2);
 grid minor;
 xlim([min(w-initial_w) max(w-initial_w)]);
 xlabel('Radians');
 title('Normalized analytic derivative du/dw');
-
-% figure;
-% plot(save_m, 'LineWidth', 2); grid minor;
-% title('save m');
-% figure;
-% plot(save_stage, 'LineWidth', 2); grid minor;
-% title('save stage');
-% figure;
-% plot(save_tri, 'LineWidth', 2); grid minor;
-% title('save tri');
-
-% save('dudw.mat','deriv_norm');
-% 
-% if 0 == exist([pwd '/Plots/',figure_name],'dir')
-% 	mkdir([pwd '/Plots/',figure_name]);
-% end
-% 
-% for i = 1:4
-%     set(0,'CurrentFigure',i);
-%     saveas(gcf,[pwd '/Plots/',figure_name,'/',num2str(i)],'epsc');
-% end
-
-% dir_L    = [pwd '/../../../Aplicaciones/Overleaf/2021_Self_Replicating_Pulley_Report/figs'];
 dir_L    = [pwd '/runs/figs'];
 
 if 0 == exist([dir_L,'/dudw/',figure_name],'dir')
