@@ -2,10 +2,10 @@ close all;
 clear all;
 clc;
 
-pulley   = 'line';
+pulley   = 'triangle';
 model_3D = 'circle';
 
-dir_L = ['/../../../Aplicaciones/Overleaf/2021_Self_Replicating_Pulley_Report/figs/iterations/From_',pulley,'_to_',model_3D];
+dir_L = ['/runs/figs/iterations/From_',pulley,'_to_',model_3D];
 
 substitution = false;
 
@@ -27,7 +27,6 @@ output = printer(input,0,deriv_norm,10);
 
 spy(initial_pully);
 grid minor;
-supersizeme(gcf, 1.5);
 saveas(gcf,[pwd dir_L,'/initial_pully'],'epsc');
 saveas(gcf,[pwd dir_L,'/initial_pully'],'png');
 iteration_figure_url = [pwd dir_L,'/initial_pully.bmp'];
@@ -37,7 +36,6 @@ close all; pause(0.1);
 
 spy(input);
 grid minor;
-supersizeme(gcf, 1.5);
 saveas(gcf,[pwd dir_L,'/initial_model_3D'],'epsc');
 saveas(gcf,[pwd dir_L,'/initial_model_3D'],'png');
 input_figure_url = [pwd dir_L,'/initial_model_3D.bmp'];
@@ -47,7 +45,6 @@ close all; pause(0.1);
 
 spy(output);
 grid minor;
-supersizeme(gcf, 1.5);
 saveas(gcf,[pwd dir_L,'/iteration_1'],'epsc');
 saveas(gcf,[pwd dir_L,'/iteration_1'],'png');
 output_figure_url = [pwd dir_L,'/iteration_1.bmp'];
@@ -69,7 +66,6 @@ for i = 2:10
     close all; pause(0.1);
     spy(output);
     grid minor;
-    supersizeme(gcf, 1.5);
     saveas(gcf,[pwd dir_L,'/iteration_',num2str(i)],'epsc');
     saveas(gcf,[pwd dir_L,'/iteration_',num2str(i)],'png');
     iteration_figure_url = [pwd dir_L,'/iteration_',num2str(i),'.bmp'];

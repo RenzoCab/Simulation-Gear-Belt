@@ -4,7 +4,8 @@ close all
 clear all
 clc
 
-dir_L = [pwd '/../../../Aplicaciones/Overleaf/2021_Self_Replicating_Pulley_Report/figs'];
+% dir_L = [pwd '/../../../Aplicaciones/Overleaf/2021_Self_Replicating_Pulley_Report/figs'];
+dir_L    = [pwd '/runs/figs'];
 
 r0 = 11.4;
 r  = 6;
@@ -30,7 +31,8 @@ close all
 clear all
 clc
 
-dir_L = [pwd '/../../../Aplicaciones/Overleaf/2021_Self_Replicating_Pulley_Report/figs'];
+% dir_L = [pwd '/../../../Aplicaciones/Overleaf/2021_Self_Replicating_Pulley_Report/figs'];
+dir_L    = [pwd '/runs/figs'];
 
 r = 6;
 
@@ -57,7 +59,8 @@ close all
 clear all
 clc
 
-dir_L = [pwd '/../../../Aplicaciones/Overleaf/2021_Self_Replicating_Pulley_Report/figs'];
+% dir_L = [pwd '/../../../Aplicaciones/Overleaf/2021_Self_Replicating_Pulley_Report/figs'];
+dir_L    = [pwd '/runs/figs'];
 
 r = 6;
 
@@ -78,7 +81,9 @@ close all
 clear all
 clc
 
-dir_L = [pwd '/../../../Aplicaciones/Overleaf/2021_Self_Replicating_Pulley_Report/figs'];
+% dir_L = [pwd '/../../../Aplicaciones/Overleaf/2021_Self_Replicating_Pulley_Report/figs'];
+dir_L    = [pwd '/runs/figs'];
+
 b     = 11.45;
 r     = 6;
 
@@ -108,7 +113,7 @@ ylabel('Normalized base');
 title('Triangle''s base over iterations');
 legend('Experimental','Simulation','Mathematical')
 grid minor;
-supersizeme(h2, 2);
+% supersizeme(h2, 2);
 saveas(gcf,[dir_L,'/convergences'],'epsc');
 
 %% Nice dudw plots:
@@ -129,7 +134,8 @@ name_fig = 'heart';
 deriv_norm_hea = create_dudw(['pics/',name_fig,'.bmp'], 1000, 6);
 
 
-dir_L = [pwd '/../../../Aplicaciones/Overleaf/2021_Self_Replicating_Pulley_Report/figs'];
+% dir_L = [pwd '/../../../Aplicaciones/Overleaf/2021_Self_Replicating_Pulley_Report/figs'];
+dir_L    = [pwd '/runs/figs'];
 
 h2 = figure('Position', [1000 1000 dim_fig dim_fig]);
 plot(linspace(0,2*pi,1000),deriv_norm_tri, 'LineWidth', 2);
@@ -142,7 +148,7 @@ xlim([0 2*pi]);
 xlabel('Radians');
 title('Normalized analytic derivative du/dw');
 legend('Triangle','Circle','Square','Heart');
-supersizeme(h2, 2.5);
+% supersizeme(h2, 2.5);
 saveas(gcf,[dir_L,'/derivatives'],'epsc');
 
 %% Iteration test:

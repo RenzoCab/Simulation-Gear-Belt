@@ -7,8 +7,7 @@ figure_name = 'heart';
 figure_name = 'circleShifted';
 figure_name = 'square';
 figure_name = 'Ideal_pully';
-figure_name = 'line';
-
+% figure_name = 'line';
 
 [set_x, set_y, len, I] = convex_hull_set(['pics/',figure_name,'.bmp']);
 
@@ -43,7 +42,6 @@ circle(0,0,dudw_norm/box_dim,2);
 for i = 1:length(set_x)-1
     plot(set_x(i),set_y(i),'o','MarkerSize',i+3,'MarkerFaceColor','red');
 end
-supersizeme(h, 1.5);
 
 % Structure dimensions:
 
@@ -127,6 +125,8 @@ else
 end
 
 %% Gear - System dynamics:
+
+pause(0.1);
 
 dudw = @(r1,r3,m) (1/2) * (2*r1*r3*sin(m)) ./ sqrt(r1^2+r3^2-r1*r3*cos(m));
 
@@ -242,7 +242,6 @@ end
 % h = figure;
 % plot(deriv, 'LineWidth', 2); grid minor;
 % title('deriv');
-% supersizeme(h, 1.5);
 
 h1 = figure(3);
 plot(linspace(0,2*pi,200), step_mean, 'LineWidth', 2); grid minor;
@@ -251,7 +250,6 @@ plot(linspace(0,2*pi,200),mean(step_mean)*ones(1,length(step_mean)), 'LineWidth'
 title('Finite-Differences norm. derivative du/dw');
 xlabel('Radians');
 xlim([0 2*pi]);
-supersizeme(h1, 1.5);
 
 h2 = figure(4);
 plot(w-initial_w,deriv_norm, 'LineWidth', 2);
@@ -262,7 +260,6 @@ grid minor;
 xlim([min(w-initial_w) max(w-initial_w)]);
 xlabel('Radians');
 title('Normalized analytic derivative du/dw');
-supersizeme(h2, 1.5);
 
 % figure;
 % plot(save_m, 'LineWidth', 2); grid minor;
@@ -285,11 +282,14 @@ supersizeme(h2, 1.5);
 %     saveas(gcf,[pwd '/Plots/',figure_name,'/',num2str(i)],'epsc');
 % end
 
-if 0 == exist([pwd '/../../../Aplicaciones/Overleaf/2021_Self_Replicating_Pulley_Report/figs/dudw/',figure_name],'dir')
-	mkdir([pwd '/../../../Aplicaciones/Overleaf/2021_Self_Replicating_Pulley_Report/figs/dudw/',figure_name]);
+% dir_L    = [pwd '/../../../Aplicaciones/Overleaf/2021_Self_Replicating_Pulley_Report/figs'];
+dir_L    = [pwd '/runs/figs'];
+
+if 0 == exist([dir_L,'/dudw/',figure_name],'dir')
+	mkdir([dir_L,'/dudw/',figure_name]);
 end
 
 for i = 1:4
     set(0,'CurrentFigure',i);
-    saveas(gcf,[pwd '/../../../Aplicaciones/Overleaf/2021_Self_Replicating_Pulley_Report/figs/dudw/',figure_name,'/',num2str(i)],'epsc');
+    saveas(gcf,[dir_L,'/dudw/',figure_name,'/',num2str(i)],'epsc');
 end
