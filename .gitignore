@@ -1,3 +1,5 @@
 # List of untracked files to ignore
 figs/*
+SimulationGearBelt.prj
+resources/*
 !figs/.gitkeep
