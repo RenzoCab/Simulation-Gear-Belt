@@ -3,11 +3,11 @@ clear all;
 clc;
 
 figure_name = 'triangle';
-figure_name = 'heart';
-figure_name = 'circleShifted';
-figure_name = 'square';
-figure_name = 'Ideal_pully';
-figure_name = 'line';
+% figure_name = 'heart';
+% figure_name = 'circleShifted';
+% figure_name = 'square';
+% figure_name = 'Ideal_pully';
+% figure_name = 'line';
 
 [set_x, set_y, len, I] = convex_hull_set(['pulleys/',figure_name,'.bmp']);
 
