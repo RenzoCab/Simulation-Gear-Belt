@@ -1,1 +1,10 @@
-r
+cff-version: 1.0
+message: "If you use this software, please cite it as below."
+authors:
+  - family-names: Caballero
+    given-names: Renzo
+    orcid: https://orcid.org/0000-0003-3220-0923
+title: "Experiment in robotic self-repair"
+version: 1.0
+doi: ...
+date-released: 2021-08-19
