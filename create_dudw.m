@@ -1,3 +1,9 @@
+% Author: Renzo Caballero
+% KAUST: King Abdullah University of Science and Technology
+% email: renzo.caballerorosas@kaust.edu.sa caballerorenzo@hotmail.com
+% Website: renzocaballero.org, https://github.com/RenzoCab
+% August 2021; Last revision: 23/08/2021
+
 function [deriv_norm] = create_dudw(figure_name, Nw, dudw_norm)
 
     [set_x, set_y, len, ~] = convex_hull_set(figure_name);
