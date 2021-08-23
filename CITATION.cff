@@ -1,10 +1,28 @@
-cff-version: 1.0
+cff-version: 1.2.0
 message: "If you use this software, please cite it as below."
 authors:
-  - family-names: Caballero
-    given-names: Renzo
-    orcid: https://orcid.org/0000-0003-3220-0923
-title: "Experiment in robotic self-repair"
-version: 1.0
-doi: ...
+  - family-names: "Caballero"
+    given-names: "Renzo"
+    orcid: "https://orcid.org/0000-0003-3220-0923"
+title: "Simulation-Gear-Belt"
+version: 1.0.0
 date-released: 2021-08-19
+url: "https://github.com/RenzoCab/Simulation-Gear-Belt"
+preferred-citation:
+  type: article
+  authors:
+  - family-names: "Caballero"
+    given-names: "Renzo"
+    orcid: "https://orcid.org/0000-0003-3220-0923"
+  - family-names: "Feron"
+    given-names: "Eric"
+    orcid: "https://orcid.org/0000-0001-7717-2159"
+  doi: "10.0000/00000"
+  journal: "Journal Title"
+  month: 9
+  start: 1 # First page number
+  end: 10 # Last page number
+  title: "Experiment in robotic self-repair"
+  issue: 1
+  volume: 1
+  year: 2021
