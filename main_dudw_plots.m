@@ -45,9 +45,9 @@ end
 plot([0;set_x(1:2);0],[0;set_y(1:2);0],'LineWidth',3);
 plot(0,0,'o','MarkerSize',10,'MarkerFaceColor','red');
 circle(0,0,dudw_norm/box_dim,2);
-for i = 1:length(set_x)-1
-    plot(set_x(i),set_y(i),'o','MarkerSize',i+3,'MarkerFaceColor','red');
-end
+% for i = 1:length(set_x)-1
+%     plot(set_x(i),set_y(i),'o','MarkerSize',8,'MarkerFaceColor','red');
+% end
 
 % Structure dimensions:
 
