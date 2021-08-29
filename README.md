@@ -1,5 +1,7 @@
 # Simulation-Gear-Belt (V1.0.0)
 
+![](./triangular_pulley.gif)
+
 Please, let me know if you want a Python version.
 
 Tested in:
