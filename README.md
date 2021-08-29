@@ -29,4 +29,5 @@ This repository contains all scripts utilized in _Experiment in robotic self-rep
 
 ## Mathematics
 
-The main mathematical contribution from the article's simulation section is the construction of du/dw from the timing pulley's convex hull. Essentially, the convex hull descrives a ser of triangles where all of them share the vertex _(0,0)_. Also, in the article, we mention the property: _At each time, one (and only one) vertex controls the belt's movement as a function of the pulley's rotation._ From the previous two properties, we find an exact solution for du/dw as it is described in **mathematical_model.pdf**.
+The main mathematical contribution from the article's simulation section is the construction of du/dw from the timing pulley's convex hull. Essentially, the convex hull describes a set of triangles where all of them share the vertex _(0,0)_. Also, in the article, we mention the property: _At each time, one (and only one) vertex controls the belt's movement as a function of the pulley's rotation._ From the previous two properties, we find an exact expression for du/dw as it is described in **mathematical_model.pdf**.
+Notice that the expression is exact in the described setup, where convex sets approximate timing pulleys.
