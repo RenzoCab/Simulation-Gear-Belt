@@ -2,7 +2,7 @@
 % KAUST: King Abdullah University of Science and Technology
 % email: renzo.caballerorosas@kaust.edu.sa caballerorenzo@hotmail.com
 % Website: renzocaballero.org, https://github.com/RenzoCab
-% August 2021; Last revision: 23/08/2021
+% August 2021; Last revision: 29/08/2021
 
 close all;
 clear all;
@@ -57,6 +57,8 @@ fix_p = [-r,d/2];
 r3    = sqrt(r^2+(d/2)^2); % mm
 alpha = atan((d/2)/r); % rad
 beta  = pi/2 - alpha; % rad
+
+pause(2);
 
 %% Gear dimensions:
 
@@ -207,10 +209,10 @@ for i = 1:length(w)
     end
     
     [r1_x,r1_y] = pol2cart(pi-alpha-m,r1);
-    plot(r1_x,r1_y,'o','MarkerSize',2,'MarkerFaceColor','red');
-    plot_pulley = plot(xy_rot(:,1),xy_rot(:,2),'LineWidth',3);
-    plot_line   = plot([fix_p(1) r1_x],[fix_p(2) r1_y],'LineWidth',2);
-    plot_t1     = plot(set_x_t1,set_y_t1,'LineWidth',3);
+    plot(r1_x,r1_y,'o','MarkerSize',2,'color','b');
+    plot_pulley = plot(xy_rot(:,1),xy_rot(:,2),'LineWidth',3,'color','b');
+    plot_line   = plot([fix_p(1) r1_x],[fix_p(2) r1_y],'LineWidth',2,'color','b');
+    plot_t1     = plot(set_x_t1,set_y_t1,'LineWidth',3,'color','b');
     
     deriv_fd(i)      = norm(fix_p-[r1_x,r1_y]) / (w(2)-w(1));
     deriv(i)         = dudw(r1,r3,m);
@@ -228,6 +230,8 @@ for i = 0:199
     
 end
 
+pause(2);
+
 h1 = figure(3);
 plot(linspace(0,2*pi,200), step_mean, 'LineWidth', 2); grid minor;
 hold on;
@@ -235,6 +239,8 @@ plot(linspace(0,2*pi,200),mean(step_mean)*ones(1,length(step_mean)), 'LineWidth'
 title('Finite-Differences norm. derivative du/dw');
 xlabel('Radians');
 xlim([0 2*pi]);
+
+pause(2);
 
 h2 = figure(4);
 plot(w-initial_w,deriv_norm, 'LineWidth', 2);

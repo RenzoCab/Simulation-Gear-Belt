@@ -29,6 +29,37 @@ This repository contains all scripts utilized in _Experiment in robotic self-rep
 2. True: This is an experimental setup that was still not explored. It is similar to the previous one, with the difference of substituting the _x_-axis pulley at each iteration and the reference (it is not fixed anymore) with the value of the previous output.
 * **main.m** runs _close_loop_.
 
+##  Getting started
+
+The scripts' execution is relatuivelyt simple. There are two scripts which can be run independently, they are main.m and main_dudw_plots.m.
+
+### By default pulleys
+
+Folder **pulleys** contains all utilized pulleys designs during this work, plus additional examples. You can (and should!) create your own pulleys, always keeping in mind the file's conditions: black and white, 2000x2000 pixels, and .bmp.
+
+### main.m
+
+It has the following variables:
+* **pulley = 'triangle';** % Initial pulley A_0.
+* **model_3D = 'circle';** % Reference B.
+* **num_iter = 10;** % Number of iterations (number of times we print C, and substitute this new printed pulley in position A).
+* **substitution = false;** % Experimental flag, if it is true, we also substitute the reference B with the value of the printed C.
+
+The variables **pulley** and **model_3D** are strings with the names of the utilized pulleys inside folder **pulleys**. As an example, if we set **pulley = 'triangle'**, we are utilizing as initial point A_0, the file **pulleys/triangle.bmp**.
+
+Once it runs, it displays first a plot with the initial pullet A_0, after a plot with the reference B, and finally the ten plots with the outputs C_1, C_2, ..., C_10. Once the simulation finishes, it also shows convergence plots. We observe two types of convergence, with respect to reference B and with respect to the final printed pulley C_10.
+Both plots are important since we may no converge to the reference, but the sequence may still have a fixed point.
+
+### main_dudw_plots.m
+
+It has the following variables:
+* **pulley = 'triangle';** % The pulley which we will analyze.
+
+Once it runs, it plots:
+1) The pulley's convex hull and the ideal circular pulley's convex hull.
+2) A sequence of plots that simulates the pulley's rotation and its interaction with the timing belt.
+3) The partial derivatives, utilizing both our analytical approach and finite differences.
+
 ## Mathematics
 
 The main mathematical contribution from the article's simulation section is the construction of du/dw from the timing pulley's convex hull. Essentially, the convex hull describes a set of triangles where all of them share the vertex _(0,0)_. Also, in the article, we mention the property: _At each time, one (and only one) vertex controls the belt's movement as a function of the pulley's rotation._ From the previous two properties, we find an exact expression for du/dw as it is described in **mathematical_model.pdf**.
