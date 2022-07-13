@@ -1,5 +1,5 @@
 cff-version: 1.2.0
-message: "If you use this software, please cite it as below."
+message: "If you use this software, please cite our paper."
 authors:
   - family-names: "Caballero"
     given-names: "Renzo"
@@ -17,12 +17,9 @@ preferred-citation:
   - family-names: "Feron"
     given-names: "Eric"
     orcid: "https://orcid.org/0000-0001-7717-2159"
-  doi: "10.0000/00000"
-  journal: "Journal Title"
-  month: 9
-  start: 1 # First page number
-  end: 10 # Last page number
-  title: "Experiment in robotic self-repair"
-  issue: 1
-  volume: 1
-  year: 2021
+  journal: "American Control Conference 2022"
+  month: 6
+  start: 3702 # First page number
+  end: 3709 # Last page number
+  title: "Experiments in Robotic Self-Repair: A 3D Printer Repairs Its Own Timing Pulley"
+  year: 2022
